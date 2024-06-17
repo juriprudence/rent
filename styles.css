@@ -1,0 +1,15 @@
+.property.card {
+    height: 500px; /* Set the desired height here */
+  }
+.card-img-top {
+    height: 200px; /* Set the desired height here */
+    object-fit: cover; /* Ensure the image covers the entire space */
+  }
+
+@media (min-width: 992px)
+{.navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}}

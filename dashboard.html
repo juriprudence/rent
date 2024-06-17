@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+    <title>Dashboard</title>
+   
+        <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.3/firebase-storage.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+
+       
+        <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-database.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dashbord.css">
+</head>
+<body>
+    <div id="root"></div>
+    <div class="d-flex flex-row-reverse">
+
+    <button id="addPropertyBtnch">اضافة ملكية</button>
+    </div>
+    <div id="propertyModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="propertyForm">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" id="title" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="number" class="form-control" id="price" required>
+        </div>
+        <div class="form-group">
+            <label for="latitude">Latitude:</label>
+            <input type="text" class="form-control" id="latitude" required>
+        </div>
+        <div class="form-group">
+            <label for="longitude">Longitude:</label>
+            <input type="text" class="form-control" id="longitude" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" rows="4" cols="50"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="commun">Common Property:</label>
+            <select class="form-control" id="commun">
+                <option value="maghnia">Maghnia</option>
+                <option value="shaybe_rasou">Shaybe Rasou</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="images">Images:</label>
+            <input type="file" class="form-control-file" id="images" accept="image/*" multiple required>
+        </div>
+        <div id="specialPricesSection">
+            <h4>Special Prices</h4>
+            <div class="special-price-entry">
+              <label for="startDate">Start Date:</label>
+              <input type="date" class="form-control" id="startDate">
+              <label for="endDate">End Date:</label>
+              <input type="date" class="form-control" id="endDate">
+              <label for="specialPrice">Price:</label>
+              <input type="number" class="form-control" id="specialPrice">
+              <button type="button" class="btn btn-danger remove-special-price">Remove</button> 
+            </div>
+          </div>
+          <button type="button" class="btn btn-secondary" id="addSpecialPriceBtn">Add Special Price</button>
+    
+        <button type="button" class="btn btn-primary" id="addPropertyBtn">Add Property</button>
+        <p id="errorMessage" style="color: red;"></p>
+        </form>
+    </div>
+    </div>
+    <div class="container ">
+        <div id="propertyList" class="row">
+            <!-- Property listings will be displayed here -->
+        </div>
+    </div>
+    <div class="container">
+        <div id="bookinglist" class="row">
+
+        </div>
+
+    </div>
+    <div id="foot"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="module" src="dashboard.mjs"></script>
+</body>
+</html>
